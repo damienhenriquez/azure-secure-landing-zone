@@ -19,3 +19,11 @@ resource "azurerm_log_analytics_workspace" "management" {
 
   tags = var.tags
 }
+
+module "networking" {
+  source = "../modules/networking"
+
+  resource_group_name = azurerm_resource_group.management.name
+  location            = var.location
+  tags                = var.tags
+}
