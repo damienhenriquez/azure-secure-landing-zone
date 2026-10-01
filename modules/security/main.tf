@@ -24,7 +24,7 @@ resource "azurerm_key_vault" "landing_zone" {
 resource "azurerm_role_assignment" "key_vault_secrets_officer" {
   scope                = azurerm_key_vault.landing_zone.id
   role_definition_name = "Key Vault Secrets Officer"
-  principal_id         = data.azurerm_client_config.current.object_id
+  principal_id         = var.key_vault_admin_principal_id
 }
 
 resource "azurerm_monitor_diagnostic_setting" "key_vault" {

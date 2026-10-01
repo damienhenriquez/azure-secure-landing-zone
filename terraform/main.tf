@@ -31,11 +31,12 @@ module "networking" {
 module "security" {
   source = "../modules/security"
 
-  resource_group_name        = azurerm_resource_group.management.name
-  resource_group_id          = azurerm_resource_group.management.id
-  location                   = var.location
-  subscription_id            = var.subscription_id
-  environment                = var.environment
-  log_analytics_workspace_id = azurerm_log_analytics_workspace.management.id
-  tags                       = var.tags
+  resource_group_name          = azurerm_resource_group.management.name
+  resource_group_id            = azurerm_resource_group.management.id
+  location                     = var.location
+  subscription_id              = var.subscription_id
+  environment                  = var.environment
+  key_vault_admin_principal_id = var.key_vault_admin_principal_id
+  log_analytics_workspace_id   = azurerm_log_analytics_workspace.management.id
+  tags                         = var.tags
 }

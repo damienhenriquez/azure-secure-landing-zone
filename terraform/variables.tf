@@ -31,3 +31,8 @@ variable "tags" {
     Project     = "Secure Azure Landing Zone"
   }
 }
+
+variable "key_vault_admin_principal_id" {
+  description = "Entra object ID granted Key Vault Secrets Officer."
+  type        = string
+}
